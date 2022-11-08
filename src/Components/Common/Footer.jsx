@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="">
+    <div className="mt-4">
       <footer
         aria-label="Site Footer"
         className="bg-gray-900 text-white lg:grid lg:grid-cols-5"

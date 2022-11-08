@@ -3,38 +3,37 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="my-4">
-      <section class="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center">
-        <div class="p-8 md:p-12 lg:px-16 lg:py-24">
-          <div class="mx-auto max-w-xl text-center sm:text-left">
-            <h2 class="text-2xl font-bold text-gray-900 md:text-3xl">
-               A profetional Photographer 
-            </h2>
-
-            <p class="hidden text-xl text-black md:mt-4 md:block">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-              egestas tempus tellus etiam sed. Quam a scelerisque amet
-              ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat
-              quisque ut interdum tincidunt duis.
-            </p>
-
-            <div class="mt-4 md:mt-8">
-              <Link
-              
-                class="inline-block rounded bg-emerald-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-emerald-700 focus:outline-none focus:ring focus:ring-yellow-400"
-              >
-                Hire Me
-              </Link>
-            </div>
+    <div className="mb-10 flex flex-col items-center justify-center lg:flex-row">
+      <div className="my-10 lg:my-0 w-full lg:my-20 lg:w-1/2 lg:pr-5">
+        <div className="w-8/12 mx-auto">
+          <h1 className="mb-4 text-3xl font-extrabold tracking-tight sm:text-center sm:text-5xl lg:text-left">
+            Hi I’m Ronny, I am a Profetional{" "}
+            <span className="text-teal-500">Photographer</span>
+          </h1>
+          <p className="text-md my-7 text-justify font-semibold leading-6 text-gray-400 sm:text-xl">
+            Hi I’m Ronny, A Sydney photographer who loves capturing I am so
+            happy you are here I am Creek Street Photography’s professional
+            photographer. I have received a Master of Arts in Photography and
+            take immense pride in being renowned as one of the most experienced.
+            and trusted wedding photographers working in Sydney today. We have
+            more than 100 five stars google reviews and countless kind words
+            from our beautiful couples and families.
+          </p>
+          <div>
+            <Link className="mb-3 block w-full rounded border border-teal-500 bg-teal-600 py-2 px-5 text-center text-xl font-semibold text-white transition-all hover:bg-transparent hover:text-teal-500 active:bg-teal-50 disabled:border-gray-200 disabled:bg-gray-200 disabled:text-gray-500 lg:mb-0 lg:mr-3 lg:inline-block lg:w-auto lg:text-left">
+            Hire Me
+            </Link>
+            
           </div>
         </div>
-
+      </div>
+      <div className="w-full lg:w-1/2  lg:p-4">
         <img
-          alt="Violin"
+          className="w-full  max-w-full object-cover lg:h-96 lg:h-full lg:w-full rounded-2xl"
           src="https://images.unsplash.com/photo-1490638114763-02630949efda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-          class="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-tl-[30px] md:h-[calc(100%_-_4rem)] md:rounded-tl-[60px]"
+          alt="Hero Image"
         />
-      </section>
+      </div>
     </div>
   );
 };

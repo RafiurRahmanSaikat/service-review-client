@@ -1,22 +1,23 @@
 import { Button } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import CatCard from "./CatCard";
 import Hero from "./Hero";
 const Home = () => {
   const [Data, setData] = useState([]);
   const [displayData, SetDisplayData] = useState(3);
-  console.log(displayData);
+  // console.log(displayData);
   // https://review-server-iota.vercel.app/
   useEffect(() => {
     fetch(`https://review-server-iota.vercel.app/?data=${displayData}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data.result);
-        return console.log("API", data.result);
+        // return console.log("API", data.result);
       });
   }, [displayData]);
 
-  console.log("State DATA", Data);
+  // console.log("State DATA", Data);
   return (
     <div>
       <Hero></Hero>
@@ -28,13 +29,15 @@ const Home = () => {
           </div>
         ))}
       </div>
-      <Button
-        onClick={() => SetDisplayData(0) }
-        className="w-[10em]"
-        color="blue"
-      >
-        See All
-      </Button>
+      <Link to='/services'>
+        <Button
+          onClick={() => SetDisplayData(0)}
+          className="w-[10em]"
+          color="blue"
+        >
+          See All
+        </Button>
+      </Link>
     </div>
   );
 };

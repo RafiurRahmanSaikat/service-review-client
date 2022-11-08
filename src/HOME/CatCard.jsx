@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const CatCard = ({ data }) => {
   const { details, CatName, categoryimg, price } = data;
@@ -14,9 +13,9 @@ const CatCard = ({ data }) => {
             <span className="font-bold text-green-700"> Price : </span>$ {price}
             {" //- Only "}
           </p>
-          <Link className="text-sm font-semibold uppercase text-teal-500 hover:underline">
+          {/* <Link className="text-sm font-semibold uppercase text-teal-500 hover:underline">
             View Details
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

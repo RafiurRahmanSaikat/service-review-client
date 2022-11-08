@@ -1,11 +1,15 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../Images/logo.ico";
 
 const ProfileDropDown = (props) => {
   const [state, setState] = useState(false);
   const profileRef = useRef();
 
-  const navigation = [{ title: "Blogs", path: "/" }];
+  const navigation = [
+    { title: "Blogs", path: "/" },
+    { title: "Review", path: "/" },
+  ];
 
   useEffect(() => {
     const handleDropDown = (e) => {
@@ -22,8 +26,8 @@ const ProfileDropDown = (props) => {
           onClick={() => setState(!state)}
         >
           <img
-            src="https://randomuser.me/api/portraits/men/46.jpg"
             className="w-full h-full rounded-full"
+            src="https://randomuser.me/api/portraits/men/46.jpg"
           />
         </button>
         <div className="lg:hidden">
@@ -37,14 +41,13 @@ const ProfileDropDown = (props) => {
         }`}
       >
         {navigation.map((item, idx) => (
-          <li>
-            <a
-              key={idx}
+          <li key={idx}>
+            <Link
               className="block text-gray-600 lg:hover:bg-gray-50 lg:p-2.5"
               href={item.path}
             >
               {item.title}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -56,15 +59,18 @@ export default () => {
   const [menuState, setMenuState] = useState(false);
 
   // Replace / path with your path
-  const navigation = [{ title: "Blogs", path: "/" }];
+  const navigation = [
+    { title: "Blogs", path: "/" },
+    { title: "Review", path: "/" },
+  ];
 
   return (
     <nav className="bg-white border-b">
       <div className="flex items-center space-x-8 py-3 px-4 max-w-screen-xl mx-auto">
         <div className="flex-none lg:flex-initial">
-          <a href="/">
+          <Link href="/">
             <img src={logo} width={80} height={50} alt="logo" />
-          </a>
+          </Link>
         </div>
         <div className="flex-1 flex items-center justify-between">
           <div
@@ -75,7 +81,7 @@ export default () => {
             <ul className="mt-12 space-y-5 lg:flex lg:space-x-6 lg:space-y-0 lg:mt-0">
               {navigation.map((item, idx) => (
                 <li key={idx} className="text-gray-600 hover:text-gray-900">
-                  <a href={item.path}>{item.title}</a>
+                  <Link href={item.path}>{item.title}</Link>
                 </li>
               ))}
             </ul>

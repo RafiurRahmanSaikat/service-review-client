@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CatCard from "./CatCard";
 import Hero from "./Hero";
+import Newsletter from "./Newsletter";
 import SatisfiedClients from "./SatisfiedClients";
 const Home = () => {
   const [Data, setData] = useState([]);
@@ -22,15 +23,16 @@ const Home = () => {
   return (
     <div>
       <Hero></Hero>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-12 p-14 ">
+      <hr className="h-2 rounded-lg bg-gray-300   m-4" />
+      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-12 p-14 ">
         {Data.map((items) => (
           <div key={items._id}>
             <CatCard key={items._id} data={items}></CatCard>
           </div>
         ))}
       </div>
-      <Link to='/services'>
+      <hr className="h-2 rounded-lg bg-gray-300   m-4" />
+      <Link to="/services">
         <Button
           onClick={() => SetDisplayData(0)}
           className="w-[10em]"
@@ -40,6 +42,8 @@ const Home = () => {
         </Button>
       </Link>
       <SatisfiedClients></SatisfiedClients>
+      <hr className="h-2 rounded-lg bg-gray-300   m-4" />
+      <Newsletter></Newsletter>
     </div>
   );
 };

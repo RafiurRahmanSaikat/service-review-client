@@ -99,11 +99,11 @@ export default () => {
                 </>
               )}
             </ul>
-            <ProfileDropDown class="mt-5 pt-5 border-t lg:hidden" />
+            <ProfileDropDown className="mt-5 pt-5 border-t lg:hidden" />
           </div>
 
           <div className="flex-1 flex items-center justify-end space-x-2 sm:space-x-6">
-            <ProfileDropDown class="hidden lg:block" />
+            <ProfileDropDown className="hidden lg:block" />
             <button
               className="outline-none text-gray-400 block lg:hidden"
               onClick={() => setMenuState(!menuState)}

@@ -42,7 +42,7 @@ const Newsletter = () => {
         </form>
         <p className="mt-3 mx-auto text-center max-w-lg text-[15px] text-gray-400">
           No spam ever, we are care about the protection of your data. Read our{" "}
-          <a className="text-indigo-600 underline" href="javascript:void(0)">
+          <a className="text-indigo-600 underline" >
             {" "}
             Privacy Policy{" "}
           </a>

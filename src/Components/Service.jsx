@@ -48,9 +48,7 @@ export const Service = () => {
                 alt={CatName}
               />
 
-              <div className="absolute inset-0 px-6  py-4 transition-opacity duration-200 bg-black bg-opacity-50 opacity-0 hover:opacity-100">
-                
-              </div>
+              <div className="absolute inset-0 px-6  py-4 transition-opacity duration-200 bg-black bg-opacity-50 opacity-0 hover:opacity-100"></div>
             </div>
 
             <div className="mt-5 pt-8 md:pt-0">

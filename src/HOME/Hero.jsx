@@ -27,9 +27,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="w-full lg:w-1/2  lg:p-4">
+      <div className="w-full px-4 lg:w-1/2  lg:p-4">
         <img
-          className="w-full  max-w-full object-cover lg:h-96 lg:h-full lg:w-full rounded-2xl"
+          className="w-full   max-w-full object-cover lg:h-96 lg:h-full lg:w-full rounded-2xl"
           src="https://images.unsplash.com/photo-1490638114763-02630949efda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
           alt="Hero Image"
         />

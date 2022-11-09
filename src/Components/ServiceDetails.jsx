@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useTitle from "../Hooks/useTitle";
 import Noreview from "./Noreview";
 import Review from "./Review";
 
 const ServiceDetails = () => {
   const { id } = useParams();
-
+useTitle("Details")
   const [Data, setData] = useState([]);
   const { CatName, categoryid, categoryimg, details, price, review } = Data;
 

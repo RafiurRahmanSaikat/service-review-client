@@ -1,7 +1,9 @@
 import React from 'react';
 import ERROR from '../Assest/404.png';
+import useTitle from '../Hooks/useTitle';
 
 const Error404 = () => {
+    useTitle("404")
     return (
         <div>
             <div className="  relative overflow-hidden h-screen">

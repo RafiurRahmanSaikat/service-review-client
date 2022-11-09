@@ -2,7 +2,9 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import RegPic from "../Assest/login.svg";
 import { AuthContext } from "../Contexts/AuthProvider";
+import useTitle from "../Hooks/useTitle";
 const Login = () => {
+  useTitle("Login")
   const [error, setError] = useState(null);
   const { login, GoogleSignIn, GithubLogIn } = useContext(AuthContext);
   const location = useLocation();

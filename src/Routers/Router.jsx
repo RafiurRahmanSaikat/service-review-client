@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Error404 from "../Components/Error404";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
+import Review from "../Components/Review";
 import { Service } from "../Components/Service";
 import ServiceDetails from "../Components/ServiceDetails";
 import Home from "../HOME/Home";
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/review",
+        element: <Review></Review>
       },
       {
         path: "/services",

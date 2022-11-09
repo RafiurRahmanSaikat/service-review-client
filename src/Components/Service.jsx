@@ -1,8 +1,10 @@
 import { Button } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useTitle from "../Hooks/useTitle";
 
 export const Service = () => {
+  useTitle("Services")
   const [Data, setData] = useState([]);
   const [displayData, SetDisplayData] = useState(0);
   // https://review-server-iota.vercel.app/

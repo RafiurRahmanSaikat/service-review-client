@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CatCard from "./CatCard";
 import Hero from "./Hero";
+import SatisfiedClients from "./SatisfiedClients";
 const Home = () => {
   const [Data, setData] = useState([]);
   const [displayData, SetDisplayData] = useState(3);
@@ -38,6 +39,7 @@ const Home = () => {
           See All
         </Button>
       </Link>
+      <SatisfiedClients></SatisfiedClients>
     </div>
   );
 };

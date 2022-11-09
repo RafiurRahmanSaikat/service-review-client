@@ -40,26 +40,21 @@ export const Service = () => {
         {/*ALL Service Card  Starts */}
 
         {Data.map(({ _id, CatName, categoryimg, details }) => (
-          <Link key={_id} to={`/services/${_id}`} aria-label="View Item">
+          <section key={_id} aria-label="View Item">
             <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
               <img
-                className="object-cover min-w-full min-h-full h-56 md:h-64 xl:h-80"
+                className="object-cover rounded-lg min-w-full min-h-full h-56 md:h-64 xl:h-80"
                 src={categoryimg}
                 alt={CatName}
               />
 
-              <div className="absolute inset-0 px-6  py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
-                <p className="text-sm tracking-wide text-justify   text-gray-300">
-                  {details}
-                </p>
+              <div className="absolute inset-0 px-6  py-4 transition-opacity duration-200 bg-black bg-opacity-50 opacity-0 hover:opacity-100">
+                
               </div>
             </div>
 
-            {/*
-             *Details Section
-             */}
             <div className="mt-5 pt-8 md:pt-0">
-              <Link>
+              <div>
                 <div className="mt-2">
                   <h3 className="text-xl text-gray-900 font-semibold hover:underline">
                     {CatName}
@@ -74,13 +69,13 @@ export const Service = () => {
                     SEE REVIEW
                   </Button>
                 </Link>
-              </Link>
+              </div>
             </div>
 
             {/* <div className="text-black text-start border-spacing-2 outline-2 outline outline-offset-2 mt-4 outline-green-600 rounded-xl">
               <p>{details}</p>
             </div> */}
-          </Link>
+          </section>
         ))}
       </div>
     </div>

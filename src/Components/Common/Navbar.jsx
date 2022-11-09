@@ -1,15 +1,17 @@
 import { Button } from "@material-tailwind/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import avt from "../../Assest/avatar.png";
 import logo from "../../Assest/logo.ico";
+import { AuthContext } from "../../Contexts/AuthProvider";
 const ProfileDropDown = (props) => {
   return <div className={`relative ${props.class}`}></div>;
 };
 
 export default () => {
+  const {user,LogOut}=useContext(AuthContext)
   const [menuState, setMenuState] = useState(false);
-  const user = false;
+
   return (
     <nav className=" bg-white border-b">
       <div className="flex  justify-between  space-x-8 py-3 px-4 max-w-screen-xl mx-auto">
@@ -51,7 +53,7 @@ export default () => {
                   </li>
                   <li className="text-gray-600 hover:text-gray-900">
                     <Link to="./">
-                      <Button className="w-auto" color="red">
+                      <Button onClick={LogOut} className="w-auto" color="red">
                         {" log Out"}
                       </Button>
                     </Link>
@@ -60,10 +62,10 @@ export default () => {
                       <div className="grid  justify-center items-center">
                         <img
                           className="w-12 h-12 mx-auto rounded-full justify-center items-center "
-                          src={avt}
+                          src={user?.photoURL}
                           alt=""
                         />
-                        <p className="text-center">LOGIN ASE </p>
+                        <p className="text-center">{user?.displayName} </p>
                       </div>
                     </li>
                 </>
@@ -92,7 +94,7 @@ export default () => {
                         src={avt}
                         alt=""
                       />
-                      <p className="text-center">LOGIN NAI </p>
+                   
                     </div>
                   </li>
                   

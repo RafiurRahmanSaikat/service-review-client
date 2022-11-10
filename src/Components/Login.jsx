@@ -20,31 +20,95 @@ const Login = () => {
     console.log(email, password);
 
     login(email, password)
-      .then((res) => {
-        const user = res.user;
+      .then((result) => {
+        const user = result.user;
 
-        setError("You are successfully logged in");
-        navigate(from, { replace: true });
+        const currentUser = {
+          email: user.email,
+        };
+
+        console.log(currentUser);
+
+        // Create  jwt token from Seerver
+
+        fetch("https://review-server-iota.vercel.app/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            // local storage is the easiest but not the best place to store jwt token
+            localStorage.setItem("review-token", data.token);
+            navigate(from, { replace: true });
+          });
       })
-      .catch((error) => {
-        const errorMessage = error.message;
-        setError(errorMessage);
-      });
+      .catch((error) => console.log(error));
   };
 
   const GitLogin = () => {
     GithubLogIn()
       .then((result) => {
-        navigate(from, { replace: true });
-      })
+        const user = result.user;
 
-      .catch((error) => setError(error?.message));
+        const currentUser = {
+          email: user.email,
+        };
+
+        console.log(currentUser);
+
+        // Create  jwt token from Seerver
+
+        fetch("https://review-server-iota.vercel.app/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            // local storage is the easiest but not the best place to store jwt token
+            localStorage.setItem("review-token", data.token);
+            navigate(from, { replace: true });
+          });
+      })
+      .catch((error) => console.log(error));
   };
 
   const GoogleLogIn = () => {
     GoogleSignIn()
-      .then((res) => navigate(from, { replace: true }))
-      .catch((error) => setError(error?.message));
+      .then((result) => {
+        const user = result.user;
+
+        const currentUser = {
+          email: user.email,
+        };
+
+        console.log(currentUser);
+
+        // Create  jwt token from Seerver
+
+        fetch("https://review-server-iota.vercel.app/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            // local storage is the easiest but not the best place to store jwt token
+            localStorage.setItem("review-token", data.token);
+            navigate(from, { replace: true });
+          });
+      })
+      .catch((error) => console.log(error));
   };
   return (
     <>

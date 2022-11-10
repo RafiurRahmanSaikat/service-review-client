@@ -51,7 +51,7 @@ const Home = () => {
           See All
         </Button>
       </Link>
-      <SatisfiedClients></SatisfiedClients>
+      <SatisfiedClients data={Data}></SatisfiedClients>
       <hr className="h-2 rounded-lg bg-gray-300   m-4" />
       <Newsletter></Newsletter>
     </div>

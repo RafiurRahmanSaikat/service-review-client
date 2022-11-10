@@ -54,7 +54,7 @@ const AddReview = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          console.log(data);
+    
           toast.success("Added Riview");
           form.reset()
         } else {
@@ -66,7 +66,7 @@ const AddReview = () => {
         toast.error(err.message);
       });
 
-    console.log(SubmitedReview);
+   
   };
   return (
     <div>

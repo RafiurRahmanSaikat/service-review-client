@@ -20,17 +20,20 @@ const SatisfiedClients = () => {
 
                 <div className="mt-4 sm:mx-4 sm:mt-0">
                   <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-white">
-                  Amanda & Andrew
+                    Amanda & Andrew
                   </h1>
 
                   <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                  Wedding photography 
+                    Wedding photography
                   </p>
                 </div>
               </div>
 
               <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-              Hi Ronny,Thank you so much for sending those!I can’t say how happy we are that we had you as our wedding photographer - you were just absolutely amazing and the photos show that! All of our guests commented .
+                Hi Ronny,Thank you so much for sending those!I can’t say how
+                happy we are that we had you as our wedding photographer - you
+                were just absolutely amazing and the photos show that! All of
+                our guests commented .
               </p>
 
               <div className="flex mt-4 -mx-2">
@@ -85,24 +88,32 @@ const SatisfiedClients = () => {
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
-                  src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+                  src="https://images.squarespace-cdn.com/content/v1/615511137ee8bb0f8bbae591/115cb782-a7ec-4287-b9a3-cd9441d86fe8/Long+Reef+Golf+Club+Wedding-775LT-1367.jpg?format=750w"
                   alt=""
                 />
 
                 <div className="mt-4 sm:mx-4 sm:mt-0">
                   <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-white">
-                    Amelia. Anderson
+                    Mr and Mrs Myers
                   </h1>
 
                   <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                    Lead Developer
+                    Model
                   </p>
                 </div>
               </div>
 
               <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                nesciunt officia aliquam neque optio? Cumque facere numquam est.
+                Hi Ronny,Just arrived back from our honeymoon yesterday and
+                wanted to say a huge thank you for everything! You made our
+                wedding day so incredibly special and we are super excited as we
+                know the shots will be amazing. Everyone spoke to us saying how
+                great Ronny is and they were all extremely impressed with your
+                work!We cannot thank you enough for all the effort you put in
+                our day to make it such a special day for us. It was the best
+                day of our lives and couldn’t believe how smoothly it all
+                went!Thank you again!Mr and Mrs Myers – see their Long Reef Golf
+                Club Wedding on the blog
               </p>
 
               <div className="flex mt-4 -mx-2">
@@ -157,24 +168,26 @@ const SatisfiedClients = () => {
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
-                  src="https://images.unsplash.com/photo-1488508872907-592763824245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                  src="https://images.squarespace-cdn.com/content/v1/615511137ee8bb0f8bbae591/710f0b5a-8aec-4372-bc39-5bec94ce8266/Wedding+-+Long+Reef+Beach-914TM-0776.jpg?format=750w"
                   alt=""
                 />
 
                 <div className="mt-4 sm:mx-4 sm:mt-0">
                   <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-white">
-                    Olivia Wathan
+                    Marc and Steph
                   </h1>
 
                   <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                    Lead designer
+                    Under Water
                   </p>
                 </div>
               </div>
 
               <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                nesciunt officia aliquam neque optio? Cumque facere numquam est.
+                Hi RonnyThanks so much for your work - we love them!You’ve
+                captured some wonderful moments for us and really ThanksAmber
+                and Andrew - married at St Andrew’s Wahroonga and reception at
+                Bronte SLSC - Sydney
               </p>
 
               <div className="flex mt-4 -mx-2">
@@ -229,24 +242,31 @@ const SatisfiedClients = () => {
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
-                  src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+                  src="https://images.squarespace-cdn.com/content/v1/615511137ee8bb0f8bbae591/af1476f3-e2ed-4383-b719-82f2ba227941/Creek+Street+Photography-801LM-0074.jpg?format=750w"
                   alt=""
                 />
 
                 <div className="mt-4 sm:mx-4 sm:mt-0">
                   <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-white">
-                    John Doe
+                    Shikha and Stuart
                   </h1>
 
                   <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                    Full stack developer
+                    Wedding
                   </p>
                 </div>
               </div>
 
               <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                nesciunt officia aliquam neque optio? Cumque facere numquam est.
+                Dearest Ronny! Oh my goodness, we received our photos!!!!!❤From
+                the bottom of our hearts we would like to say the biggest THANK
+                YOU!!!They are BEAUTIFUL, BREATHTAKING and everything we could
+                have ever dreamed of. Ronny you captured the raw emotion in our
+                eyes, the natural moments of pure bliss plus all the magic in
+                between. We have no idea how we are going to chose our photos
+                for the album!!!x - married on 30th May 2020 - See their
+                Cronulla wedding with Bass and Flinders Point ceremony and Wanda
+                Beach and Cape Solander location shoot
               </p>
 
               <div className="flex mt-4 -mx-2">

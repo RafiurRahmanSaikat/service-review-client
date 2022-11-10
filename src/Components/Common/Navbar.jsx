@@ -9,7 +9,7 @@ const ProfileDropDown = (props) => {
 };
 
 export default () => {
-  const { user, LogOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [menuState, setMenuState] = useState(false);
 
   return (
@@ -53,7 +53,7 @@ export default () => {
                   </li>
                   <li className="text-gray-600 hover:text-gray-900">
                     <Link to="./">
-                      <Button onClick={LogOut} className="w-auto" color="red">
+                      <Button onClick={logOut} className="w-auto" color="red">
                         {" log Out"}
                       </Button>
                     </Link>

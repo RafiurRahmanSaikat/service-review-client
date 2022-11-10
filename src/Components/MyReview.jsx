@@ -14,27 +14,19 @@ const MyReview = () => {
   const [UserReviewData, setUserReviewData] = useState([]);
   const [reload, setReload] = useState(false);
 
-  // useEffect(() => {
-  //   fetch(`https://review-server-iota.vercel.app/userreview/?email=${id}`, {
-  //     headers: {
-  //       authorization: `Bearer ${localStorage.getItem("review-token")}`,
-  //     },
-  //   }).then((res) => {
-  //     if (res.status === 401 || res.status === 403) {
-  //       return logOut();
-  //     }
-
-  //     return ((res) => res.json()).then((data) => {
-  //       setUserReviewData(data.result);
-  //       setLoading(false);
-  //       return console.log("Inside API", data.result);
-  //     });
-  //   });
-  // }, [reload]);
-
   useEffect(() => {
-    fetch(`https://review-server-iota.vercel.app/userreview/?email=${id}`)
-      .then((res) => res.json())
+    fetch(`https://review-server-iota.vercel.app/userreview/?email=${id}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("review-token")}`,
+      },
+    })
+      .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+          window.open('/login');
+          return logOut();
+        }
+        return res.json();
+      })
       .then((data) => {
         setUserReviewData(data.result);
         setLoading(false);

@@ -7,6 +7,9 @@ const MyReviewCard = ({ reload, setReload, data }) => {
 
   const { name, img, details, CatName, _id, submit } = data;
 
+
+
+  
   const DELETE = (Itemsid) => {
     fetch(`https://review-server-iota.vercel.app/delete/?id=${Itemsid}`, {
       method: "DELETE",

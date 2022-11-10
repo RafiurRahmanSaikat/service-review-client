@@ -5,6 +5,8 @@ import CatCard from "./CatCard";
 import Hero from "./Hero";
 import Newsletter from "./Newsletter";
 import SatisfiedClients from "./SatisfiedClients";
+
+
 const Home = () => {
   const [Data, setData] = useState([]);
   const [displayData, SetDisplayData] = useState(3);
@@ -18,7 +20,6 @@ const Home = () => {
         // return console.log("API", data.result);
       });
   }, [displayData]);
-
   // console.log("State DATA", Data);
   return (
     <div>

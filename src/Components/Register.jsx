@@ -14,7 +14,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const ConfrimPassword = form.ConfrimPassword.value;
-
+console.log(name,photo,password);
     const Profile = { displayName: name, photoURL: photo };
 
     setError("");

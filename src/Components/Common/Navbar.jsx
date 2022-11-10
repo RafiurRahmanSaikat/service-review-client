@@ -9,7 +9,8 @@ const ProfileDropDown = (props) => {
 };
 
 export default () => {
-  const {user,LogOut}=useContext(AuthContext)
+  const { user, LogOut } = useContext(AuthContext);
+  console.log(user);
   const [menuState, setMenuState] = useState(false);
 
   return (
@@ -38,9 +39,9 @@ export default () => {
                     </Link>
                   </li>
                   <li className="text-gray-600 hover:text-gray-900">
-                    <Link to={`/addreview/`}>
+                    <Link to={`/myreview/${user.email}`}>
                       <Button className="w-auto" color="amber">
-                        {" Add Review"}
+                        {" My Review"}
                       </Button>
                     </Link>
                   </li>
@@ -58,20 +59,19 @@ export default () => {
                       </Button>
                     </Link>
                   </li>
-                    <li className="text-gray-600 hover:text-gray-900">
-                      <div className="grid  justify-center items-center">
-                        <img
-                          className="w-12 h-12 mx-auto rounded-full justify-center items-center "
-                          src={user?.photoURL}
-                          alt=""
-                        />
-                        <p className="text-center">{user?.displayName} </p>
-                      </div>
-                    </li>
+                  <li className="text-gray-600 hover:text-gray-900">
+                    <div className="grid  justify-center items-center">
+                      <img
+                        className="w-12 h-12 mx-auto rounded-full justify-center items-center "
+                        src={user?.photoURL}
+                        alt=""
+                      />
+                      <p className="text-center">{user?.displayName} </p>
+                    </div>
+                  </li>
                 </>
               ) : (
                 <>
-                  
                   <li className="text-gray-600 hover:text-gray-900">
                     <Link to="./blogs">
                       <Button className="w-auto" color="blue">
@@ -94,10 +94,8 @@ export default () => {
                         src={avt}
                         alt=""
                       />
-                   
                     </div>
                   </li>
-                  
                 </>
               )}
             </ul>

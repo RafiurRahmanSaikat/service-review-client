@@ -1,6 +1,7 @@
 import { Button } from "@material-tailwind/react";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import { AuthContext } from "../Contexts/AuthProvider";
 import useTitle from "../Hooks/useTitle";
 
@@ -33,18 +34,36 @@ const AddReview = () => {
     const time = Date.now();
 
     const SubmitedReview = {
+
       categoryid: name,
       email: email,
       details: Review,
       img: photo,
       submit: time,
     };
-    
+
+    fetch("https://review-server-iota.vercel.app/addreview", {
+      method: "post",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(SubmitedReview),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          console.log(data);
+          toast.success("Added Riview");
+        } else {
+          toast.error("Error");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err.message);
+      });
+
     console.log(SubmitedReview);
-    
-
-
-
   };
   return (
     <div>

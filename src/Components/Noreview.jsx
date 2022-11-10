@@ -8,7 +8,7 @@ const Noreview = () => {
   
 
   useEffect(() => {
-    fetch(`https://review-server-iota.vercel.app/services/?id=${id}`)
+    fetch(`https://review-server-iota.vercel.app/review/?id=${id}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data.result);

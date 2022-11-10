@@ -46,7 +46,7 @@ console.log(name,photo,password);
   };
   return (
     <>
-      <div className="  relative overflow h-[90vh]">
+      <div className="  relative overflow h-[93vh]">
         <img
           src={RegPic}
           className="absolute  h-[100vh] w-[100vw] object-center"

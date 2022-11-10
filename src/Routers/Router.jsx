@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import AddReview from "../Components/AddReview";
+import AddServices from "../Components/AddServices";
 import Error404 from "../Components/Error404";
 import Login from "../Components/Login";
 import MyReview from "../Components/MyReview";
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
       {
         path: "/services",
         element: <Service></Service>,
+      },
+      {
+        path: "/addservice",
+        element: <AddServices></AddServices>,
       },
       {
         path: `/services/:id`,

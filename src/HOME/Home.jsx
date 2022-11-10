@@ -2,12 +2,14 @@ import { Button } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "../Components/Loader";
+import useTitle from "../Hooks/useTitle";
 import CatCard from "./CatCard";
 import Hero from "./Hero";
 import Newsletter from "./Newsletter";
 import SatisfiedClients from "./SatisfiedClients";
 
 const Home = () => {
+  useTitle("Home")
   const [Data, setData] = useState([]);
   const [displayData, SetDisplayData] = useState(3);
   const [dataLoading, setDataLoading] = useState(true);
@@ -33,6 +35,7 @@ const Home = () => {
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-12 p-14 ">
           {Data.map((items) => (
             <div key={items._id}>
+              
               <CatCard key={items._id} data={items}></CatCard>
             </div>
           ))}

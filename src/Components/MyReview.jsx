@@ -1,15 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../Contexts/AuthProvider";
 import useTitle from "../Hooks/useTitle";
 import Loader from "./Loader";
 import MyReviewCard from "./MyReviewCard";
 
 const MyReview = () => {
+  useTitle("My Review");
   const { id } = useParams();
-  useTitle("Details");
+
   const [loading, setLoading] = useState(true);
+  const { user, logOut } = useContext(AuthContext);
   const [UserReviewData, setUserReviewData] = useState([]);
   const [reload, setReload] = useState(false);
+
+  // useEffect(() => {
+  //   fetch(`https://review-server-iota.vercel.app/userreview/?email=${id}`, {
+  //     headers: {
+  //       authorization: `Bearer ${localStorage.getItem("review-token")}`,
+  //     },
+  //   }).then((res) => {
+  //     if (res.status === 401 || res.status === 403) {
+  //       return logOut();
+  //     }
+
+  //     return ((res) => res.json()).then((data) => {
+  //       setUserReviewData(data.result);
+  //       setLoading(false);
+  //       return console.log("Inside API", data.result);
+  //     });
+  //   });
+  // }, [reload]);
 
   useEffect(() => {
     fetch(`https://review-server-iota.vercel.app/userreview/?email=${id}`)
@@ -21,7 +42,6 @@ const MyReview = () => {
       })
       .catch((error) => console.error(error));
   }, [reload]);
-
   return (
     <div>
       <section className=" text-gray-800">

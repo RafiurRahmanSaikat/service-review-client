@@ -149,7 +149,6 @@ const Login = () => {
             </form>
           </div>
         </div>
-        
       </section>
     </>
   );

@@ -6,9 +6,9 @@ import { AuthContext } from "../Contexts/AuthProvider";
 import useTitle from "../Hooks/useTitle";
 
 const AddReview = () => {
+  useTitle("Add Review")
   const { user } = useContext(AuthContext);
   const { id } = useParams();
-  useTitle("Details");
   const [Data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { displayName, photoURL } = user;

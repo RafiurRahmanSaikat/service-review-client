@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import AddReview from "../Components/AddReview";
 import AddServices from "../Components/AddServices";
+import Blogs from "../Components/Common/Blogs";
 import Error404 from "../Components/Error404";
 import Login from "../Components/Login";
 import MyReview from "../Components/MyReview";
@@ -27,15 +28,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "/register",
-        element: <Register></Register>
+        element: <Register></Register>,
       },
       {
         path: "/review",
-        element: <Review></Review>
+        element: <Review></Review>,
       },
       {
         path: "/myreview/:id",
-        element: <MyReview></MyReview>
+        element: <MyReview></MyReview>,
       },
       {
         path: "/services",
@@ -50,13 +51,21 @@ export const router = createBrowserRouter([
         element: <ServiceDetails></ServiceDetails>,
       },
       {
+        path: `/blogs`,
+        element: <Blogs></Blogs>,
+      },
+      {
         path: `/addreview/:id`,
-        element: <PrivateRoute><AddReview></AddReview></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <AddReview></AddReview>
+          </PrivateRoute>
+        ),
       },
     ],
   },
   {
     path: "*",
-    element: <Error404></Error404>
+    element: <Error404></Error404>,
   },
 ]);

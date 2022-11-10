@@ -7,8 +7,8 @@ import Noreview from "./Noreview";
 import Review from "./Review";
 
 const ServiceDetails = () => {
+  useTitle("Service Details & Review");
   const { id } = useParams();
-  useTitle("Details");
   const [Data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [ReviewData, setReviewData] = useState([]);
@@ -31,7 +31,7 @@ const ServiceDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         setReviewData(data.result);
-        setLoading(false)
+        setLoading(false);
         return console.log("Inside API", data.result);
       })
       .catch((error) => console.error(error));
@@ -50,6 +50,10 @@ const ServiceDetails = () => {
                   <p className="text-5xl text-amber-700 text-center p-4">
                     {" "}
                     {CatName}
+                  </p>
+                  <p className="text-5xl text-purple-500 font-bold text-center p-4">
+                    {" "}
+                    Price $ :- {price}=//
                   </p>
                   <img className="rounded-2xl" src={categoryimg} alt="" />
 

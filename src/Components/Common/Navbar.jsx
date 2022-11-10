@@ -10,7 +10,6 @@ const ProfileDropDown = (props) => {
 
 export default () => {
   const { user, LogOut } = useContext(AuthContext);
-  console.log(user);
   const [menuState, setMenuState] = useState(false);
 
   return (

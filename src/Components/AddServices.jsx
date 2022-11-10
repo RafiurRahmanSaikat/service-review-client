@@ -2,7 +2,9 @@ import { Button } from "@material-tailwind/react";
 import React from "react";
 import { toast } from "react-toastify";
 import Edit from "../Assest/edit.svg";
+import useTitle from "../Hooks/useTitle";
 const AddServices = () => {
+  useTitle("Add Service")
   const SubmitForm = (event) => {
     event.preventDefault();
     const form = event.target;

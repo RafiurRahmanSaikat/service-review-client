@@ -35,7 +35,7 @@ const MyReviewCard = ({ reload, setReload, data }) => {
       CatName,
       submit,
     };
-  console.log(updateDoc);
+  // console.log(updateDoc);
     fetch(`https://review-server-iota.vercel.app/update/?id=${_id}`, {
       method: "PATCH",
       headers: {

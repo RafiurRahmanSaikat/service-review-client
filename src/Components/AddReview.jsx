@@ -1,6 +1,6 @@
 import { Button } from "@material-tailwind/react";
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Contexts/AuthProvider";
 import useTitle from "../Hooks/useTitle";
@@ -10,6 +10,8 @@ const AddReview = () => {
   const { id } = useParams();
   useTitle("Details");
   const [Data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { displayName, photoURL } = user;
   const { CatName, categoryid, categoryimg, details, _id, price, review } =
     Data;
 
@@ -28,17 +30,17 @@ const AddReview = () => {
 
     const form = event.target;
     const name = form.name.value;
-    const photo = form.PhotoUrl.value;
+
     const email = form.email.value;
     const Review = form.review.value;
     const time = Date.now();
 
     const SubmitedReview = {
-
-      categoryid: name,
+      CatName: name,
+      name: displayName,
       email: email,
       details: Review,
-      img: photo,
+      img: photoURL,
       submit: time,
     };
 
@@ -54,6 +56,7 @@ const AddReview = () => {
         if (data.success) {
           console.log(data);
           toast.success("Added Riview");
+          form.reset()
         } else {
           toast.error("Error");
         }
@@ -128,22 +131,6 @@ const AddReview = () => {
                     </div>
                     <div className="space-y-2"></div>
                   </div>
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="email"
-                      className="block font-semibold text-amber-700"
-                    >
-                      Photo Url
-                    </label>
-                    <input
-                      type="text"
-                      name="PhotoUrl"
-                      placeholder=" Photo Url"
-                      className="w-[80vh] px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-green-600"
-                    />
-                  </div>
-
-                  {/*  */}
 
                   <div className="space-y-2">
                     <label
@@ -162,7 +149,13 @@ const AddReview = () => {
                   <Button type="submit" className="mx-auto" color="amber">
                     Submit
                   </Button>
+                  
                 </form>
+                <Link to={`/services/${id}`}>
+                  <Button className="mx-auto m-4" color="blue">
+                    Go Back to See Review
+                  </Button>
+                  </Link>
               </div>
             </div>
           </div>

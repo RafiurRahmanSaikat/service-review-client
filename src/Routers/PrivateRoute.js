@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import Loader from '../Components/Loader';
 import { AuthContext } from '../Contexts/AuthProvider';
 
 const PrivateRoute = ({ children }) => {
@@ -8,10 +9,7 @@ const PrivateRoute = ({ children }) => {
 
     if (loading)
         return (
-            <div className='flex-col p-[20rem] justify-center items-center '>
-                <progress className="progress  progress-error w-[80%] h-20"></progress>
-                <p className=' text-red-500 text-5xl'>LOADING........!!!</p>
-            </div>
+            <Loader></Loader>
         )
     if (user?.uid)
         return (

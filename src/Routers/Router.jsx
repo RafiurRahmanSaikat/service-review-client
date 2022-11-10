@@ -2,12 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 import AddReview from "../Components/AddReview";
 import Error404 from "../Components/Error404";
 import Login from "../Components/Login";
+import MyReview from "../Components/MyReview";
 import Register from "../Components/Register";
 import Review from "../Components/Review";
 import { Service } from "../Components/Service";
 import ServiceDetails from "../Components/ServiceDetails";
 import Home from "../HOME/Home";
 import MainLayout from "../Layout/MainLayout";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +33,10 @@ export const router = createBrowserRouter([
         element: <Review></Review>
       },
       {
+        path: "/myreview/:id",
+        element: <MyReview></MyReview>
+      },
+      {
         path: "/services",
         element: <Service></Service>,
       },
@@ -40,7 +46,7 @@ export const router = createBrowserRouter([
       },
       {
         path: `/addreview/:id`,
-        element: <AddReview></AddReview>,
+        element: <PrivateRoute><AddReview></AddReview></PrivateRoute>,
       },
     ],
   },

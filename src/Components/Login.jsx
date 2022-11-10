@@ -4,9 +4,10 @@ import RegPic from "../Assest/login.svg";
 import { AuthContext } from "../Contexts/AuthProvider";
 import useTitle from "../Hooks/useTitle";
 const Login = () => {
-  useTitle("Login")
+  useTitle("Login");
+
   const [error, setError] = useState(null);
-  const { login, GoogleSignIn, GithubLogIn } = useContext(AuthContext);
+  const { login, loading, GoogleSignIn, GithubLogIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location?.state?.from?.pathname || "/";
@@ -17,10 +18,11 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+
     login(email, password)
       .then((res) => {
         const user = res.user;
-        console.log(user);
+
         setError("You are successfully logged in");
         navigate(from, { replace: true });
       })
@@ -29,6 +31,7 @@ const Login = () => {
         setError(errorMessage);
       });
   };
+
   const GitLogin = () => {
     GithubLogIn()
       .then((result) => {

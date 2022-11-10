@@ -73,7 +73,7 @@ const AddServices = () => {
             <input
               name="categoryimg"
               type="text"
-              placeholder=" Category Name"
+              placeholder=" Image URL"
               className="w-full p-3 mt-2 rounded bg-gray-100"
             />
           </div>

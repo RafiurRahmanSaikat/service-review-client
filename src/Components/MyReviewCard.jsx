@@ -4,9 +4,10 @@ import { toast } from "react-toastify";
 
 const MyReviewCard = ({ reload, setReload, data }) => {
   const [edit, setedit] = useState(false);
-  const { name, img, details, CatName, _id } = data;
+
+  const { name, img, details, CatName, _id, submit } = data;
+
   const DELETE = (Itemsid) => {
-    console.log(Itemsid);
     fetch(`https://review-server-iota.vercel.app/delete/?id=${Itemsid}`, {
       method: "DELETE",
     })
@@ -21,29 +22,45 @@ const MyReviewCard = ({ reload, setReload, data }) => {
       })
       .catch((err) => toast.error(err.message));
   };
+
   const SUBMIT = (event) => {
     event.preventDefault();
     const review = event.target.review.value;
-    console.log(review);
-    setedit(!edit);
+ 
+
+    const updateDoc = {
+      details: review,
+      img,
+      name,
+      CatName,
+      submit,
+    };
+  console.log(updateDoc);
+    fetch(`https://review-server-iota.vercel.app/update/?id=${_id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(updateDoc)
+    }).then(res => res.json())
+    .then(data => {
+      if(data.success){
+        setedit(!edit);
+        setReload(!reload);
+        toast.success(data.message);
+        
+      } else {
+        toast.err(data.error)
+      }
+    })
+    .catch(err => toast.error(err.message))
+  
   };
+
   const EDIT = (Itemsid) => {
     setedit(!edit);
-    console.log(Itemsid);
 
-    // fetch(`https://review-server-iota.vercel.app/delete/?id=${Itemsid}`, {
-    //   method: "DELETE",
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.success) {
-    //       setReload(!reload);
-    //       toast.success(data.message);
-    //     } else {
-    //       toast.error(data.error);
-    //     }
-    //   })
-    //   .catch((err) => toast.error(err.message));
+    console.log(Itemsid);
   };
   return (
     <section className="m-4">
@@ -87,7 +104,7 @@ const MyReviewCard = ({ reload, setReload, data }) => {
                 name="review"
                 className="w-[100%] h-[40vh] p-4  border rounded-md border-gray-300 bg-gray-50  focus:border-green-600"
               />
-              <Button  type="submit" color="green">
+              <Button type="submit" color="green">
                 Submit
               </Button>
             </form>

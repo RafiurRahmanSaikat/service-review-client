@@ -21,7 +21,7 @@ const ServiceDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         setData(data.result);
-        // return console.log("Inside API", data.result);
+        return console.log("Inside API", data.result);
       })
       .catch((error) => console.error(error));
   }, []);

@@ -22,7 +22,7 @@ const MyReview = () => {
     })
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
-          window.open('/login');
+          window.open("/login");
           return logOut();
         }
         return res.json();

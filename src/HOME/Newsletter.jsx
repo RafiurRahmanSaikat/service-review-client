@@ -21,7 +21,7 @@ const Newsletter = () => {
         <h1 className="text-3xl text-gray-800 font-semibold">
           Subscribe to our newsletter
         </h1>
-        <p className="text-gray-400 leading-relaxed">
+        <p className="text-gray-900 leading-relaxed">
           Stay up to date with the roadmap progress, announcements and exclusive
           discounts feel free to sign up with your email.
         </p>
@@ -34,18 +34,15 @@ const Newsletter = () => {
           <input
             type="email"
             placeholder="Enter your email"
-            className="text-gray-500 w-full p-3 rounded-md border outline-none focus:border-indigo-600"
+            className="text-gray-900 w-full p-3 rounded-md border outline-none focus:border-indigo-600"
           />
           <button className="w-full mt-3 px-5 py-3 rounded-md text-white bg-indigo-600 outline-none shadow-md focus:shadow-none focus:ring-2 ring-offset-2 ring-indigo-600 sm:mt-0 sm:ml-3 sm:w-auto">
             Subscribe
           </button>
         </form>
-        <p className="mt-3 mx-auto text-center max-w-lg text-[15px] text-gray-400">
+        <p className="mt-3 mx-auto text-center max-w-lg text-[15px] text-gray-900">
           No spam ever, we are care about the protection of your data. Read our{" "}
-          <a className="text-indigo-600 underline" >
-            {" "}
-            Privacy Policy{" "}
-          </a>
+          
         </p>
       </div>
     </section>

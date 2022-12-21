@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import RegPic from "../Assest/login.svg";
 import { AuthContext } from "../Contexts/AuthProvider";
 import useTitle from "../Hooks/useTitle";
 const Login = () => {
   useTitle("Login");
 
-  const [error, setError] = useState(null);
   const { login, loading, GoogleSignIn, GithubLogIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -46,7 +46,10 @@ const Login = () => {
             navigate(from, { replace: true });
           });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        toast.error(error.code);
+      });
   };
 
   const GitLogin = () => {
@@ -77,7 +80,10 @@ const Login = () => {
             navigate(from, { replace: true });
           });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        toast.error(error.code);
+      });
   };
 
   const GoogleLogIn = () => {
@@ -108,7 +114,10 @@ const Login = () => {
             navigate(from, { replace: true });
           });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        toast.error(error.code);
+      });
   };
   return (
     <>
@@ -164,8 +173,10 @@ const Login = () => {
             <div className="flex items-center w-full my-4">
               <hr className="w-full text-gray-600" />
               <p className="px-3 text-gray-600">OR</p>
+
               <hr className="w-full text-gray-600" />
             </div>
+
             <form
               onSubmit={SubmitForm}
               className="space-y-8 ng-untouched ng-pristine ng-valid"
@@ -179,6 +190,7 @@ const Login = () => {
                     type="email"
                     name="email"
                     id="email"
+                    required
                     placeholder="leroy@jenkins.com"
                     className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-green-600"
                   />
@@ -198,6 +210,7 @@ const Login = () => {
                   <input
                     type="password"
                     name="password"
+                    required
                     id="password"
                     placeholder="*****"
                     className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-green-600"
